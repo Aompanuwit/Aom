@@ -36,7 +36,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="index.php?cat=notebook">NOTEBOOK</a></li>
                             <li><a href="index.php?cat=storage">STORAGE</a></li>
-                            <li><a href="index.php?cat=cpu">CPU</a></li>
+                            <li><a href="index.php?cat=cpu">Monitor</a></li>
                         </ul>
                     </li>
                 </ul>
