@@ -100,9 +100,9 @@
                     <div class="form-group">
                          <label for="" class="control-label col-md-3"> </label>
                          <div class="col-md-9">
-                        <input type="radio" name="rdoType" value="notebook" checked required> notebook</label>
-                        <input type="radio" name="rdoType" value="storage"> storage</label>
-                            <input type="radio" name="rdoType" value="cpu"> cpu</label>
+                        <input type="radio" name="rdoType" value="1" checked required> notebook</label>
+                        <input type="radio" name="rdoType" value="2"> storage</label>
+                            <input type="radio" name="rdoType" value="3"> cpu</label>
                         </div>
                     </div>
                     <div class="form-group">

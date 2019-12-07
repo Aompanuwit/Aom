@@ -7,24 +7,6 @@
     else{
         header("Location:index.php");
     }
-    $menu = $_GET['cat'];
-    switch($menu){
-        case "notebook":{
-            $page = "product";
-            break;
-        }
-        case "storage":{
-            $page = "product2";
-            break;
-        }
-        case "cpu":{
-            $page = "product3";
-            break;
-        }
-        default:{
-            $page = "product";
-        }
-    }
     $sql = "SELECT * FROM $page WHERE id=$pid";
     $result = $conn->query($sql);
     if(!$result){

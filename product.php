@@ -43,6 +43,12 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 <?php 
+                    if(isset($_GET['cat'])){
+                        $cate=$_GET['cat'];
+                    }
+                    else{
+                        header("location:index.php");
+                    }
                     if(isset($_SESSION['id'])){
                 ?>
                     <li class="dropdown">
@@ -83,7 +89,7 @@
                     <div class="container">
            <div class = "row">
            <?php
-                $sql = "SELECT * FROM product ORDER By id";
+                $sql = "SELECT * FROM product WHERE categoryID=$cate";
                 $result = $conn->query($sql);
                 if(!$result){
                     echo "Error during data retrieval";

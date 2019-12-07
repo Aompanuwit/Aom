@@ -18,6 +18,7 @@
         $price = $_POST['txtPrice'];
         $unitInStock = $_POST['txtStock'];
         $filename = $_FILES['filePic']["name"];
+        $tcategory = $_POST["rdoType"];
     /*echo "Type:" . $_FILES["filePic"]["type"] . "<br>";
     echo "Name:" . $_FILES["filePic"]["name"] . "<br>";
     echo "Size:" . $_FILES["filePic"]["size"] . "<br>";
@@ -25,30 +26,7 @@
     echo "Error:" . $_FILES["filePic"]["error"] . "<br>";*/
 
     move_uploaded_file($_FILES["filePic"]["tmp_name"],"pig/". $_FILES["filePic"]["name"]);
-    if(isset($_POST['rdoType'])){
-        $menu = $_POST['rdoType'];
-    }
-    else{
-        $menu="";
-    }
-    switch($menu){
-        case "notebook":{
-            $page = "product";
-            break;
-        }
-        case "storage":{
-            $page = "product2";
-            break;
-        }
-        case "cpu":{
-            $page = "product3";
-            break;
-        }
-        default:{
-            $page = "product";
-        }
-    }
-    $sqlInsert = "INSERT INTO $page (name,description,price,unitInstock,picture)VALUES ('$name','$desc','$price','$unitInStock','$filename')";
+    $sqlInsert = "INSERT INTO product (name,description,price,unitInstock,picture,categoryID)VALUES ('$name','$desc','$price','$unitInStock','$filename','$tcategory')";
     }
     $result = $conn->query($sqlInsert);
     if($result){
